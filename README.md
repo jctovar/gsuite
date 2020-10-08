@@ -1,8 +1,9 @@
 Script for create mails on gsuite with oauth2
 
-use restify
+use restify & googleapis
 
 npm install googleapis@39 --save
+npm install restify --save
 
 node .
 
@@ -17,7 +18,7 @@ https://developers.google.com/admin-sdk/directory/v1/quickstart/nodejs
 API
 iztacala listening at http://[::]:3006
 
-locate photo
+get photo as binary
 http://localhost:3006/photo/a.corona@iztacala.unam.mx
 
 get email data
