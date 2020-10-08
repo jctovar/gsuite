@@ -1,7 +1,12 @@
 const fs = require('fs');
 const readline = require('readline');
-const {google} = require('googleapis');
+const { google } = require('googleapis');
 const restify = require('restify');
+
+/*
+*   jctovar adaption 20201008
+*
+*/
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/admin.directory.user'];

@@ -38,3 +38,8 @@ Body JSON
 	"userId": "488400039",
 	"orgUnitPath": "/Alumnos"
 }
+
+TODO
+
+- basic auth
+- move functions to external file
