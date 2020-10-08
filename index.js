@@ -134,7 +134,7 @@ function getPhoto(req, res, next) {
     var image = image.replace(/-/g, "+");
     var image = image.replace(/\*/g, "=");
 
-    let buff = new Buffer(image, 'base64');
+    let buff = new Buffer.from(image, 'base64');
 
     res.send(buff);
     next();
