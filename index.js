@@ -99,7 +99,7 @@ function getUser(req, res, next) {
  * Get a user photo.
  *
  */
-function getPhoto(req, res, next) {
+function getPhoto1(req, res, next) {
   const auth = oauthAuth;
   const service = google.admin({version: 'directory_v1', auth});
 
@@ -111,6 +111,32 @@ function getPhoto(req, res, next) {
     res.header('content-type', 'json');
     res.charSet('utf-8');
     res.send(response.data);
+    next();
+  });
+}
+
+/**
+ * Get a user photo.
+ *
+ */
+function getPhoto(req, res, next) {
+  const auth = oauthAuth;
+  const service = google.admin({version: 'directory_v1', auth});
+
+  service.users.photos.get({
+    userKey: req.params.email,
+  }, (error, response) => {
+    if(error) return res.send({ "The API returned an error": error.message });
+
+    res.setHeader("Content-Type", "image/jpeg");
+
+    var image = response.data.photoData.replace(/_/g, "/");
+    var image = image.replace(/-/g, "+");
+    var image = image.replace(/\*/g, "=");
+
+    let buff = new Buffer(image, 'base64');
+
+    res.send(buff);
     next();
   });
 }
