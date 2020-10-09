@@ -25,7 +25,6 @@ get email data
 http://localhost:3006/user/juanito@iztacala.unam.mx
 
 insert email
-
 http://localhost:3006/insert/
 
 Body JSON
